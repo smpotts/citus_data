@@ -2,7 +2,7 @@
   Creates the tables to store Github user and event data.
 */
 
-CREATE TABLE github_events
+CREATE TABLE citus_data.github_events
 (
     event_id bigint,
     event_type text,
@@ -15,7 +15,7 @@ CREATE TABLE github_events
     created_at timestamp
 );
 
-CREATE TABLE github_users
+CREATE TABLE citus_data.github_users
 (
     user_id bigint,
     url text,

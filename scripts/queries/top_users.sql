@@ -3,10 +3,14 @@
 */
 
 
-SELECT login, count(*)
+SELECT 
+    login, 
+    count(*)
 FROM github_events ge
 JOIN github_users gu
-ON ge.user_id = gu.user_id
-WHERE event_type = 'CreateEvent' AND payload @> '{"ref_type": "repository"}'
+    ON ge.user_id = gu.user_id
+WHERE event_type = 'CreateEvent' 
+    AND payload @> '{"ref_type": "repository"}'
 GROUP BY login
-ORDER BY count(*) DESC LIMIT 10;
+ORDER BY count(*) DESC 
+LIMIT 10;
